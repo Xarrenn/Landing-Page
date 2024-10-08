@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+
+body {
+    background-color: #000000;
+    width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    width: 100vw;
+}
+
+.fancy-text {
+    opacity: 0;
+    font-family: 'Playfair Display SC', cursive;
+    font-size: 250px;
+    text-align: center;
+    height: 100px;
+    line-height: 1px;
+    color: white;
+    animation: slideDownText 2s 3s ease forwards;
+}
+
+.logo-wrapper {
+    position: absolute;
+    z-index: 5;
+    height: 70vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+
+.image-container {
+    margin-top: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    opacity: 0;
+    animation: fadeInImage 3s 1s ease forwards;
+}
+
+@media (max-width: 480px) {
+    .fancy-text {
+        font-size: 150px;
+    }
+}
+
+.image {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: 1100px;
+}
+
+.name {
+    opacity: 0;
+    top: 730px;
+    z-index: 3;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    animation: fadeIn 3s 3s ease forwards;
+}
+
+.name .a1 {
+    font-family: 'Playfair Display SC';
+    font-size: 75px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.name a {
+    font-family: 'Playfair Display SC';
+    font-size: 30px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.concert-list {
+   padding-top: 50px;
+    max-width: 900px;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeIn 2s 4s ease forwards;
+}
+
+.concert-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid #444;
+    position: relative;
+}
+
+.date {
+    font-size: 56px;
+    font-weight: bold;
+    margin-right: 30px;
+    flex-shrink: 0;
+    color: #cdcdcd;
+    transition: color 0.3s;
+}
+
+.info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 40px;
+    position: relative;
+}
+
+.city {
+    font-size: 56px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #cdcdcd;
+    transition: color 0.3s;
+}
+
+.venue {
+    font-size: 20px;
+    font-weight: bold;
+    color: #cdcdcd;
+    margin-top: 5px;
+    transition: transform 0.5s ease, color 0.3s;
+    transform-origin: top left;
+    transform: translateX(0); /* Начальная позиция */
+}
+
+/* Анимация при наведении */
+.concert-item:hover .venue {
+    transform: translateX(-190px); /* Перемещаем справа и вниз */
+    color: #ffffff;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icon {
+    width: 56px;
+    height: 56px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+}
+
+.concert-item:hover .date,
+.concert-item:hover .city {
+    color: #ffffff;
+}
+
+@keyframes fadeInImage {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDownText {
+            0% {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+                
+        .parallax-text {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+
+            margin-top: 5vw; /* Начальный отступ сверху */
+            transition: transform 0.25s ease-out; /* Плавное движение */
+        }
+
+        .footer {
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background-color: #000;
+        }
+
+        .socials {
+            padding-top: 2vw;
+            padding-left: 18vw;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .social-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .social-item img {
+            width: 72px;
+            height: 72px;
+        }
+
+        .social-item a {
+            color: #cdcdcd;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .social-item a:hover {
+            color: #fff;
+        }
+
+        .logo {
+            padding-top: 2vw;
+            padding-right: 18vw;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+
+    </style>
+    <title>XARRENN - СИЛЬНЫЙ ТУР 2024</title>
+</head>
+
+<body>
+    <div class="logo-wrapper">
+        <p class="fancy-text">Xarrenn</p>
+    </div>
+
+ 
+    <div class="name">
+        <div class="parallax-text" id="parallax-text">
+            <a class="a1"> СИЛЬНЫЙ </a>
+            <a> тур 2024 </a>
+         </div>
+    </div>
+   
+
+    <div class="image-container">
+        <img src="fon.jpg" alt="Centered Image" class="image">
+    </div>
+
+    <div class="parallax-text" id="parallax-text2">
+
+        <div class="concert-list">
+
+            <div class="concert-item">
+                <div class="date">18.10</div>
+                <div class="info">
+                    <div class="city">АЛМАТЫ</div>
+                    <div class="venue">MOTOR</div>
+                </div>
+                <div class="icons">
+                    <a href="https://ticketon.kz/event/mzlff-v-almaty" target="_blank">
+                        <img src="ticket-icon.png" alt="Ticket" class="icon">
+                    </a>
+                    <a href="https://vk.com/mzlff_ala" target="_blank">
+                        <img src="vk-icon.png" alt="VK" class="icon">
+                    </a>
+                </div>
+            </div>
+
+            <div class="concert-item">
+                <div class="date">08.11</div>
+                <div class="info">
+                    <div class="city">ЕКАТЕРИНБУРГ</div>
+                    <div class="venue">СВОБОДА</div>
+                </div>
+                <div class="icons">
+                    <a href="https://ticketscloud.com/v1/widgets/common?token=eyJhbGciOiJIUzI1NiIsImlzcyI6InRpY2tldHNjbG91ZC5ydSIsInR5cCI6IkpXVCJ9.eyJwIjoiNjA4MmExMWIzN2E5MWU3YTQ1YzE1MGQwIn0.cjdDHinwC-6T5hF3tuUu3BZGdPU6uSX29YkCSG2BrnA&event=66c304fbbd36c351567eefb9&s=1&r=1&org=6082a11b37a91e7a45c150d0&city=1486209&category=592841f8515e35002dead938&tags=592841f8515e35002dead94a%2C%D0%A0%D1%8D%D0%BF%2F%D0%A5%D0%B8%D0%BF-%D1%85%D0%BE%D0%BF&lang=ru" target="_blank">
+                        <img src="ticket-icon.png" alt="Ticket" class="icon">
+                    </a>
+                    <a href="https://vk.com/mzlff_ekb" target="_blank">
+                        <img src="vk-icon.png" alt="VK" class="icon">
+                    </a>
+                </div>
+            </div>
+
+            <div class="concert-item">
+                <div class="date">09.11</div>
+                <div class="info">
+                    <div class="city">ЧЕЛЯБИНСК</div>
+                    <div class="venue">ГАЛАКТИКА РАЗВЛЕЧЕНИЙ</div>
+                </div>
+                <div class="icons">
+                    <a href="https://ticketscloud.com/v1/widgets/common?token=eyJhbGciOiJIUzI1NiIsImlzcyI6InRpY2tldHNjbG91ZC5ydSIsInR5cCI6IkpXVCJ9.eyJwIjoiNjA4MmExMWIzN2E5MWU3YTQ1YzE1MGQwIn0.cjdDHinwC-6T5hF3tuUu3BZGdPU6uSX29YkCSG2BrnA&event=66c4de3993d3ed2972692605&s=1&r=1&org=6082a11b37a91e7a45c150d0&city=1508291&category=592841f8515e35002dead938&tags=592841f8515e35002dead94a%2C%D0%A0%D1%8D%D0%BF%2F%D0%A5%D0%B8%D0%BF-%D1%85%D0%BE%D0%BF&lang=ru" target="_blank">
+                        <img src="ticket-icon.png" alt="Ticket" class="icon">
+                    </a>
+                    <a href="https://vk.com/mzlff_chlb" target="_blank">
+                        <img src="vk-icon.png" alt="VK" class="icon">
+                    </a>
+                </div>
+            </div>
+
+            <div class="concert-item">
+                <div class="date">11.11</div>
+                <div class="info">
+                    <div class="city">ПЕРМЬ</div>
+                    <div class="venue">СВОБОДА</div>
+                </div>
+                <div class="icons">
+                    <a href="https://ticketscloud.com/v1/widgets/common?token=eyJhbGciOiJIUzI1NiIsImlzcyI6InRpY2tldHNjbG91ZC5ydSIsInR5cCI6IkpXVCJ9.eyJwIjoiNjA4MmExMWIzN2E5MWU3YTQ1YzE1MGQwIn0.cjdDHinwC-6T5hF3tuUu3BZGdPU6uSX29YkCSG2BrnA&event=66c31c0c53afb6eb1e64b528&s=1&r=1&org=6082a11b37a91e7a45c150d0&city=511196&category=592841f8515e35002dead938&tags=592841f8515e35002dead94a%2C%D0%A0%D1%8D%D0%BF%2F%D0%A5%D0%B8%D0%BF-%D1%85%D0%BE%D0%BF&lang=ru" target="_blank">
+                        <img src="ticket-icon.png" alt="Ticket" class="icon">
+                    </a>
+                    <a href="https://vk.com" target="_blank">
+                        <img src="vk-icon.png" alt="VK" class="icon">
+                    </a>
+                </div>
+            </div>
+
+            <div class="concert-item">
+                <div class="date">24.11</div>
+                <div class="info">
+                    <div class="city">РОСТОВ-НА-ДОНУ</div>
+                    <div class="venue">КРОП АРЕНА</div>
+                </div>
+                <div class="icons">
+                    <a href="https://ticketscloud.com/v1/widgets/common?token=eyJhbGciOiJIUzI1NiIsImlzcyI6InRpY2tldHNjbG91ZC5ydSIsInR5cCI6IkpXVCJ9.eyJwIjoiNjA4MmExMWIzN2E5MWU3YTQ1YzE1MGQwIn0.cjdDHinwC-6T5hF3tuUu3BZGdPU6uSX29YkCSG2BrnA&event=66c4c7ad5c5a1fd608bd82e9&s=1&r=1&org=6082a11b37a91e7a45c150d0&city=501175&category=592841f8515e35002dead938&tags=592841f8515e35002dead94a%2C%D0%A0%D1%8D%D0%BF%2F%D0%A5%D0%B8%D0%BF-%D1%85%D0%BE%D0%BF&lang=ru" target="_blank">
+                        <img src="ticket-icon.png" alt="Ticket" class="icon">
+                    </a>
+                    <a href="https://vk.com/mzlff_rnd" target="_blank">
+                        <img src="vk-icon.png" alt="VK" class="icon">
+                    </a>
+                </div>
+            </div>
+
+            
+
+        </div>      
+    
+
+        <div class="footer">
+            <div class="socials">
+                <div class="social-item">
+                    <img src="telegram-icon.png" alt="Telegram">
+                    <a href="https://t.me/Xarenn" target="_blank">/Xarrenn</a>
+                </div>
+                <div class="social-item">
+                    <img src="vk-icon.png" alt="VK">
+                    <a href="https://vk.com/id241742314" target="_blank">/Xarrenn</a>
+                </div>
+            </div>
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+            </div>
+        </div>
+    </div>
+    
+
+    
+
+        <script>
+            window.addEventListener('scroll', function() {
+                const parallaxText = document.getElementById('parallax-text');
+                const scrollPosition = window.scrollY;
+                parallaxText.style.transform = `translateY(${scrollPosition * -0.11}px)`;
+            });
+
+            window.addEventListener('scroll', function() {
+                const parallaxText = document.getElementById('parallax-text2');
+                const scrollPosition = window.scrollY;
+                parallaxText.style.transform = `translateY(${scrollPosition * -0.11}px)`;
+            });
+        </script>
+    
+</body>
+</html>
